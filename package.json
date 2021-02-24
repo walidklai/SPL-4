@@ -1,52 +1,26 @@
 {
-  "name": "paper-kit-react",
-  "version": "1.2.0",
-  "private": true,
-  "dependencies": {
-    "classnames": "2.2.6",
-    "moment": "2.26.0",
-    "node-sass": "4.14.1",
-    "nouislider": "14.5.0",
-    "react": "16.13.1",
-    "react-bootstrap-switch": "15.5.3",
-    "react-datetime": "2.16.3",
-    "react-dom": "16.13.1",
-    "react-iframe": "^1.8.0",
-    "react-router": "5.2.0",
-    "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.1",
-    "reactstrap": "8.4.1"
-  },
+  "name": "spl-gaming",
+  "version": "1.0.0",
+  "description": "a web app for simplicity gaming",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && gulp licenses",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "compile-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.css",
-    "minify-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.min.css --output-style compressed",
-    "map-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.css --source-map true"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "optionalDependencies": {
-    "typescript": "3.9.5"
+  "author": "walid klai",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "config": "^3.3.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "mailchimp-api-v3": "^1.14.0",
+    "mongoose": "^5.11.17",
+    "request": "^2.88.2"
   },
   "devDependencies": {
-    "gulp": "4.0.2",
-    "gulp-append-prepend": "1.0.8"
+    "nodemon": "^2.0.7"
   }
 }
