@@ -66,18 +66,17 @@ function Index() {
         {/* <SectionTypography />
         <SectionJavaScript /> */}
         <div id="teams">
-          <CustomCard />
+          {/* <CustomCard /> */}
         </div>
         <div id="latest">
           <SectionDark />
         </div>
-        <SectionLogin />
+        {/* <SectionLogin /> */}
         <SectionDownload />
         <SectionNucleoIcons />
         <div id="partners">
           <SectionExamples />
         </div>
-
         <DemoFooter />
       </div>
     </>

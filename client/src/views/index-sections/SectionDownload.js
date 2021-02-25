@@ -30,6 +30,10 @@ import {
   Label,
   Input,
   FormText,
+  Card,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
 } from "reactstrap";
 
 import axios from "axios";
@@ -43,7 +47,7 @@ function SectionDownload() {
   });
 
   const handleChange = (e) => {
-    console.log(formData)
+    console.log(formData);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -68,62 +72,34 @@ function SectionDownload() {
         style={{ overflow: "hidden" }}
       >
         <div
+          id="hide"
           className="fixed-clouds"
           style={{
-            backgroundImage: "url(" + require("assets/img/leona2.png") + ")",
-            opacity: 0.5,
+            backgroundImage: "url(" + require("assets/img/leona3.png") + ")",
+            opacity: 0.3,
           }}
         />
-        <Container className="text-center">
-          {/* <Row>
-            <Col className="ml-auto mr-auto text-center" md="8">
-              <h2 className="title">Do you like what you see?</h2>
-              <p className="description">
-                Cause if you do, it can be yours for Free. Hit the button below
-                and download it. Start a new project or give an old Bootstrap 4
-                project a new look.
-              </p>
-            </Col>
-            <Col className="ml-auto mr-auto download-area" md="5">
-              <Button
-                className="btn-round"
-                color="danger"
-                href="http://www.creative-tim.com/product/paper-kit-react?ref=pkr-index-page"
-                target="_blank"
-              >
-                Download free React
-              </Button>
-            </Col>
-          </Row> */}
-          {/* <Row className="text-center upgrade-pro">
-            <Col className="ml-auto mr-auto" md="8">
-              <h2 className="title">Want more?</h2>
-              <p className="description">
-                We're going to launch{" "}
-                <a className="text-danger" href="#pablo" disabled>
-                  Paper Kit PRO React in a few weeks
-                </a>
-                . It will have a huge number of components, sections and example
-                pages.
-              </p>
-            </Col>
-            <Col className="ml-auto mr-auto" sm="5">
-              <Button className="btn-round" color="info" href="#pablo" disabled>
-                <i aria-hidden={true} className="nc-icon nc-spaceship" />{" "}
-                Upgrade to PRO
-              </Button>
-            </Col>
-          </Row> */}
-          <Row className="justify-content-md-center text-center">
+        <h3 className="white" style={{ fontWeight: 400 }}>
+          Thank you for supporting us!
+        </h3>
+        <Container fluid className="text-center">
+          <br />
+          {/* <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              flexWrap: "wrap",
+            }}
+          > */}
+          <div></div>
+          <Row className="justify-content-md-center">
             <Col
               className="text-center"
               lg="8"
               md="12"
               style={{ marginBottom: "2rem" }}
-            >
-              <h3 className="white">Thank you for supporting us!</h3>
-            </Col>
-            <Col className="text-center" lg="8" md="12">
+            ></Col>
+            <Col className="text-center" md="12">
               <Button
                 className="twitter-sharrre btn-round"
                 color="danger"
@@ -175,20 +151,67 @@ function SectionDownload() {
               </UncontrolledTooltip>
             </Col>
           </Row>
-          <br />
-          <Form
-            className="section section-dark text-center white"
-            style={{ border: "1px solid white", borderRadius: "12px" }}
-            onSubmit={(e) => handleSubmit(e)}
-          >
-            <h3>CONTACT US</h3>
-            <br />
-            <div>
+          <Container>
+            {/* <Row>
+              <Col className="mx-auto buzz" lg="4" md="6">
+                <Card
+                  className="card-register"
+                  color="transparent"
+                  style={{ border: "1px solid white" }}
+                >
+                  <h3 className="title mx-auto">Newsletter</h3>
+                  <Form className="register-form">
+                    <label>Email</label>
+                    <InputGroup className="form-group-no-border">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="nc-icon nc-email-85" />
+                        </InputGroupText>
+                      </InputGroupAddon>
+                      <Input
+                        placeholder="Email"
+                        type="email"
+                        onChange={handleChange}
+                      />
+                    </InputGroup>
+                    <Button
+                      block
+                      className="btn-round"
+                      color="info"
+                      type="button"
+                      onClick={(e) => handleSubmit(e)}
+                    >
+                      SEND
+                    </Button>
+                  </Form>
+                </Card>
+                <p className="text-center white">
+                  Don't miss the latest news !
+                </p>
+              </Col>
+            </Row> */}
+            
+          </Container>
+          {/* </div> */}
+          <Row style={{justifyContent:'center',marginTop:20}}>
+            <Form
+              className="section-dark text-center white"
+              style={{
+                border: "1px solid white",
+                borderRadius: "12px",
+                backgroundColor: "#00000049",
+                width: "50%",
+               
+              }}
+              onSubmit={(e) => handleSubmit(e)}
+            >
+              <h3>CONTACT US</h3>
+              <br />
               <center>
-                <Label for="exampleEmail" sm={2}>
+                <Label>
                   Email
                 </Label>
-                <Col sm={10} className="col-md-4">
+                <Col>
                   <Input
                     type="email"
                     name="email"
@@ -199,10 +222,10 @@ function SectionDownload() {
                 </Col>
               </center>
               <center>
-                <Label for="exampleText" sm={2}>
+                <Label for="exampleText" lg={4} sm={2}>
                   Text Area
                 </Label>
-                <Col sm={10} className="col-md-4">
+                <Col>
                   <Input
                     type="textarea"
                     name="message"
@@ -211,12 +234,55 @@ function SectionDownload() {
                   />
                 </Col>
               </center>
-            </div>
-            <br />
-            <Button color="info" className="btn-round col-md-2">
-              SEND
-            </Button>
-          </Form>
+              <br />
+              <Button
+                color="info"
+                className="btn-round col-md-2"
+                style={{ marginBottom: 10 }}
+              >
+                SEND
+              </Button>
+              <Row>
+              <Col className="mx-auto buzz" lg="4" md="6">
+                <Card
+                  className="card-register"
+                  color="transparent"
+                  style={{ border: "1px solid white" }}
+                >
+                  <h3 className="title mx-auto">Newsletter</h3>
+                  <Form className="register-form">
+                    <label>Email</label>
+                    <InputGroup className="form-group-no-border">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="nc-icon nc-email-85" />
+                        </InputGroupText>
+                      </InputGroupAddon>
+                      <Input
+                        placeholder="Email"
+                        type="email"
+                        onChange={handleChange}
+                      />
+                    </InputGroup>
+                    <Button
+                      block
+                      className="btn-round"
+                      color="info"
+                      type="button"
+                      onClick={(e) => handleSubmit(e)}
+                    >
+                      SEND
+                    </Button>
+                  </Form>
+                </Card>
+                <p className="text-center white">
+                  Don't miss the latest news !
+                </p>
+              </Col>
+            </Row>
+            </Form>
+            
+          </Row>
         </Container>
       </div>
     </>

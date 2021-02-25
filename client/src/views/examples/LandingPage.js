@@ -16,7 +16,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useState } from "react";
 
 // reactstrap components
 import {
@@ -40,23 +40,25 @@ import DemoFooter from "components/Footers/DemoFooter.js";
 import { Link } from "react-router-dom";
 
 import lolTitle from "../../assets/img/lol-title.png";
-import lolRune from "../../assets/img/lol-rune.png";
+import challengerLogo from "../../assets/img/challenger-logo.png";
 
 function LandingPage() {
+  const [playerData, setPlayerData] = useState([]);
+
   return (
     <>
       <div className="main">
         <div
           className="section section-dark text-center"
-          style={{ overflow: "hidden" }}
+          style={{ overflow: "hidden", padding: 0 }}
         >
           <div
             style={{
-              backgroundImage:
-                "url(" + require("assets/img/lol-wallpaper.jpg") + ")",
+               backgroundImage:
+                "url(" + require("assets/img/lol-cover.jpg") + ")",
               width: "100%",
-              filter: "blur(4px)",
-              height: "80%",
+              filter: "blur(8px)",
+              height: "100%",
               position: "absolute",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -74,51 +76,93 @@ function LandingPage() {
           <Container>
             <img
               src={lolTitle}
-              style={{ width: "300px", opacity: 0.7 }}
+              style={{ width: "300px", opacity: 0.7, marginTop: 70 }}
               className="logo"
             />
             <hr />
+            <h3 className="text-center white" style={{ fontWeight: 600 }}>
+              Main Team Members
+            </h3>
             <Row style={{ display: "flex", justifyContent: "space-around" }}>
               {Array(5)
                 .fill()
-                .map((el) => (
+                .map(() => (<Col md='4'><div className="background"></div>
+
+                <div className="outer-div">
+                  <div className="inner-div">
+                    <div className="front">
+                      <div className="front__bkg-photo"></div>
+                      <div className="front__face-photo"></div>
+                      <div className="front__text">
+                        <h3 className="front__text-header">Bobby Korec</h3>
+                        <p className="front__text-para"><i className="fas fa-map-marker-alt front-icons"></i>Seattle</p>
+                        
+                        <span className="front__text-hover">Hover to Find Me</span>
+                      </div>
+                    </div>
+                    <div className="back">
+                      <div className="social-media-wrapper">
+                        <a href="#" className="social-icon"><i className="fab fa-codepen" aria-hidden="true"></i></a> 
+                        <a href="#" className="social-icon"><i className="fab fa-github-square" aria-hidden="true"></i></a>
+                        <a href="#" className="social-icon"><i className="fab fa-linkedin-square" aria-hidden="true"></i></a>
+                         <a href="#" className="social-icon"><i className="fab fa-instagram" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                
+                  </div>
+                </div></Col>
+                  
+                ))}
+            </Row>
+            <hr />
+            <h3 className="text-center white" style={{ fontWeight: 600 }}>
+              Alternative Strike Team
+            </h3>
+            <Row style={{ display: "flex", justifyContent: "space-around" }}>
+              {Array(5)
+                .fill()
+                .map(() => (
                   <Col md="2">
                     <Card className="card-profile card-plain">
                       <div
                         className="img-responsive card"
-                        style={{ border: "1px solid #51bcda"}}
+                        style={{
+                          backgroundColor: "transparent",
+                          boxShadow: "0px 10px 100px 10px #51bcda",
+                        }}
                       >
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <img
                             alt="..."
-                            src={require("assets/img/faces/clem-onojeghuo-3.jpg")}
+                            src={require("assets/img/lol-champ-2.jpg")}
                           />
                         </a>
                       </div>
-                      <img
-              src={lolRune}
-              style={{ width: "300px", opacity: 0.7}}
-              className="logo"
-            />
                     </Card>
                   </Col>
                 ))}
             </Row>
             <hr />
+            <h3 className="text-center white" style={{ fontWeight: 600 }}>
+              Coaching Team
+            </h3>
             <Row style={{ display: "flex", justifyContent: "space-around" }}>
-              {Array(5)
+              {Array(3)
                 .fill()
-                .map((el) => (
+                .map(() => (
                   <Col md="2">
                     <Card className="card-profile card-plain">
                       <div
                         className="img-responsive card"
-                        style={{ border: "1px solid #51bcda" }}
+                        style={{
+                          backgroundColor: "transparent",
+                          boxShadow: "0px 10px 100px 10px #51bcda",
+                        }}
                       >
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <img
                             alt="..."
-                            src={require("assets/img/faces/clem-onojeghuo-3.jpg")}
+                            src={require("assets/img/lol-champ-2.jpg")}
                           />
                         </a>
                       </div>

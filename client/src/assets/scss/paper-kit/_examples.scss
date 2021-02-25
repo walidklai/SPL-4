@@ -256,12 +256,22 @@
 .fixed-clouds {
     position: absolute;
     z-index: 0.5;
-    bottom: -10em;
+    bottom: -27em;
     left: 40rem;
     width: 90.20em;
-    height: 90.75em;
+    height: 88.75em;
     
   }
+
+  .fixed-clouds2 {
+    position: absolute;
+    z-index: 0.5;
+    bottom: -27em;
+    left: 40rem;
+    width: 90.20em;
+    height: 50.75em;
+  }
+
 
 @keyframes cloudLoop {
   0% {

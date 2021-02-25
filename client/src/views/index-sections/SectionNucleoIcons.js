@@ -34,30 +34,20 @@ function SectionNucleoIcons() {
   return (
     <>
       <div
-        className="section section-dark  text-center"
-        /*  style={{ backgroundColor: "rgb(13 38 58)" }} */
+        className="section section-dark text-center" style={{overflow:'hidden'}}
       >
+        <div
+          id="hide"
+          className="fixed-clouds2"
+          style={{
+            backgroundImage: "url(" + require("assets/img/diamant.png") + ")",
+            opacity: 0.3,
+          }}
+        />
         <Container className='col-md-3'>
           <Col lg="12" md="12">
             <h2 className="title">Our Partners</h2>
             <br/>
-            {/* <Button
-                className="btn-round"
-                color="danger"
-                href="/nucleo-icons"
-                target="_blank"
-              >
-                View Demo Icons
-              </Button>
-              <Button
-                className="btn-round ml-1"
-                color="danger"
-                href="https://nucleoapp.com/?ref=1712"
-                outline
-                target="_blank"
-              >
-                View All Icons
-              </Button> */}
           </Col>
           <Col lg="12" md="12">
             <div className="icons-container" style={{display:'flex',justifyContent:'space-evenly'}}>
